@@ -1,0 +1,44 @@
+<html>
+<head>
+<style>
+body {background-color:lightgray}
+div.one {
+    border-style: solid;
+    border-color: red;
+}
+</style>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1.1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable
+            ([['X', 'Y'],
+              [1, 3],
+              [2, 5.5],
+              [3, 6],
+              [4, 3.5],
+              [5, 2],
+              [6, 7.5],
+              [7, 8],
+              [8, 1.5]
+        ]);
+
+        var options = {
+          legend: 'none',
+          colors: ['#15A0C8'],
+          pointSize: 30,
+          pointShape: { type: 'triangle', rotation: 180 }
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+    </script>
+  </head>
+  <body>
+    <div align="center"><h1> Welcome To Intractive Graph</h1><br>
+    <div class="one"  id="chart_div" style="width: 900px; height: 500px;"></div>
+    <div Align="center"> <h2> <div style="color:#000080"> Vertical: Performance In Percentage</div> <br><div style="color:#000080"> Hortizantal: Years </div></h2></div>
+  </body>
+</html>
